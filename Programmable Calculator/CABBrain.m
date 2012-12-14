@@ -1,6 +1,6 @@
 //
 //  CABBrain.m
-//  Programmable Calc
+//  RPNCalculator
 //
 //  Created by Craig Butrick on 12/11/12.
 //  Copyright (c) 2012 Craig Butrick. All rights reserved.

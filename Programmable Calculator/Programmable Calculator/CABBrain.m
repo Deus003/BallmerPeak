@@ -8,7 +8,7 @@
 
 #import "CABBrain.h"
 #include <math.h>
-
+//Private Declarations
 @interface CABBrain ()
 
 @property (nonatomic, strong) NSMutableArray *operandStack;
@@ -19,7 +19,7 @@
 @implementation CABBrain
 
 
-//Setters and Getters, Yo.
+//Setters and Getters
 @synthesize operandStack = _operandStack;
 
 
@@ -99,9 +99,8 @@
     
     else if([operation isEqualToString:@"sin"])
     {
-        double sinCity = [self popOperand];
-        NSLog(@"%g", sinCity);
-        result = sin(sinCity);
+       
+        result = sin([self popOperand] );
     }
     
     else if ([operation isEqualToString:@"cos"])
@@ -111,8 +110,8 @@
     
     else if ([operation isEqualToString:@"sqrt"])
     {
-        double sqrter = [self popOperand];
-        result = sqrt(sqrter);
+        
+        result = sqrt([self popOperand]);
     }
     
     else if ([operation isEqualToString:@"Pi"])

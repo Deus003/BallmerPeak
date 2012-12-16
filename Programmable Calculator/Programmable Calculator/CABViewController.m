@@ -81,10 +81,20 @@
     self.userIsInTheMiddleOfEnteringANumber = NO;
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:self.display.text];
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
+    
+    //Limit size of secondary display
+    NSLog(@"Secondary Display %u",[self.secondaryDisplay.text length]);
+    if ([self.secondaryDisplay.text length]>30)
+    {
+        self.secondaryDisplay.text = [self.secondaryDisplay.text substringFromIndex:16];
+       
+    }
+    
     self.display.text = [NSString stringWithFormat:@""];
+    
 }
 
-//Sends operator to "brain"  Yes, Carroll, I know there is a typo.
+//Sends operator to "brain"  
 - (IBAction)operationrPressed:(UIButton *)sender
 {
     if (userIsInTheMiddleOfEnteringANumber)
@@ -94,7 +104,11 @@
     
     NSString *operation = [sender currentTitle];
     NSLog(@"%@",operation);
+    
+    //Sends data to secondary display.
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:operation];
+    self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
+    self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@"="];
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
     double result = [self.brain performOperation:operation];
     self.display.text = [NSString stringWithFormat:@"%g", result];
@@ -110,6 +124,17 @@
     [self.brain clear];
 }
 
+- (IBAction)backspace:(UIButton *)sender
+{
+    if ([self.display.text length] >1)
+    {
+        self.display.text = [self.display.text substringToIndex:[self.display.text length]-1];
+    }
+    else
+    {
+        self.display.text = @"";
+    }
+}
 
 
 

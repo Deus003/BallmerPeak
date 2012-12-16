@@ -19,6 +19,7 @@
 		C66D03A2167AD5240028E074 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66D03A0167AD5240028E074 /* MainStoryboard.storyboard */; };
 		C66D03A5167AD5240028E074 /* CABViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66D03A4167AD5240028E074 /* CABViewController.m */; };
 		C66D03B1167AD6850028E074 /* CABBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = C66D03B0167AD6850028E074 /* CABBrain.m */; };
+		C66D03B9167D19C90028E074 /* left-arrow-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C66D03B8167D19C90028E074 /* left-arrow-icon.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C66D03A4167AD5240028E074 /* CABViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CABViewController.m; sourceTree = "<group>"; };
 		C66D03AF167AD6850028E074 /* CABBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CABBrain.h; sourceTree = "<group>"; };
 		C66D03B0167AD6850028E074 /* CABBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CABBrain.m; sourceTree = "<group>"; };
+		C66D03B8167D19C90028E074 /* left-arrow-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "left-arrow-icon.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		C66D038F167AD5240028E074 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C66D03B8167D19C90028E074 /* left-arrow-icon.jpg */,
 				C66D0390167AD5240028E074 /* Programmable Calculator-Info.plist */,
 				C66D0391167AD5240028E074 /* InfoPlist.strings */,
 				C66D0394167AD5240028E074 /* main.m */,
@@ -169,6 +172,7 @@
 				C66D039D167AD5240028E074 /* Default@2x.png in Resources */,
 				C66D039F167AD5240028E074 /* Default-568h@2x.png in Resources */,
 				C66D03A2167AD5240028E074 /* MainStoryboard.storyboard in Resources */,
+				C66D03B9167D19C90028E074 /* left-arrow-icon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

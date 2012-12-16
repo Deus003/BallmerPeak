@@ -120,6 +120,11 @@
         result = M_PI;
     }
     
+    else if ([operation isEqualToString:@"+/-"])
+    {
+        result = -[self popOperand];
+    }
+    
     return result;
     
 }

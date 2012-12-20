@@ -12,10 +12,12 @@
 @interface CABBrain : NSObject
 
 - (void) pushOperand: (double)operand;
-
 - (double)performOperation: (NSString *)operation;
-
 - (void) clear;
 
+@property (nonatomic, readonly) id program;
+
++ (NSString *)descriptionOfProgram:(id)program;
++ (double) runProgram:(id)program;
 
 @end

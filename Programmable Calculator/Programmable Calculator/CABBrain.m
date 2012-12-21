@@ -17,8 +17,6 @@
 
 //Setters and Getters
 @synthesize programStack = _programStack;
-
-
 - (NSMutableArray * )programStack
 {
     if (!_programStack) {
@@ -27,6 +25,9 @@
     
     return _programStack;
 }
+
+
+
 
 +(double)runProgram:(id)program
 {
@@ -46,6 +47,76 @@
 -(id)program
 {
     return [self.programStack copy];
+}
+
++ (NSSet *) variablesUsedInProgram:(id)program
+{
+    
+    NSMutableSet *variables = nil;
+    if (![program isKindOfClass:[NSArray class]])
+    {
+        return nil;
+    }
+    
+    NSMutableArray *test = [program mutableCopy];
+    id topOfTest = [test lastObject];
+    if (topOfTest)
+    {
+        [test removeLastObject];
+        
+        if ([topOfTest isKindOfClass:[NSNumber class]])
+        {
+            [self variablesUsedInProgram:test];
+        }
+             
+        if ([topOfTest isKindOfClass:[NSString class]])
+        {
+            if ([topOfTest isEqualToString:@"+"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"-"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"/"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"*"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if([topOfTest isEqualToString:@"sin"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"cos"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"sqrt"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"Pi"])
+            {
+               [self variablesUsedInProgram:test];
+            }
+            else if ([topOfTest isEqualToString:@"+/-"])
+            {
+                [self variablesUsedInProgram:test];
+            }
+            else{
+               [variables addObject:topOfTest]; 
+            }
+
+        NSSet *variableList = [variables copy];
+        return variableList;
+        }
+    }
+    
+    return variables;
 }
 
 + (NSString *)descriptionOfProgram:(id)program
@@ -136,11 +207,13 @@
         {
             result = -[self popOperandOffOfProgramStack:stack];
         }
+        
     }
         return result;
 
     
 }
+
 
 
 

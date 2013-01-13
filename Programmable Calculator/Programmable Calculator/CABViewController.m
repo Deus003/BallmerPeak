@@ -110,7 +110,8 @@
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@"="];
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
-    double result = [self.brain performOperation:operation];
+    double result = 0;
+    [self.brain addOperationToStack:operation];
     self.display.text = [NSString stringWithFormat:@"%g", result];
     [self.brain pushOperand:[self.display.text doubleValue]];
 }

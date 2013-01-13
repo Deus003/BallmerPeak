@@ -12,7 +12,7 @@
 @interface CABBrain : NSObject
 
 - (void) pushOperand: (double)operand;
-- (double)performOperation: (NSString *)operation;
+- (void)addOperationToStack: (NSString *)operation;
 - (void) clear;
 
 @property (nonatomic, readonly) id program;

@@ -200,10 +200,10 @@ usingVariablesAsValues:(NSDictionary *)variableValues
 }
 
 //Perform Operation for backwards compatibility with RPN Calculator
--(double)performOperation:(NSString *)operation
+-(void)addOperationToStack:(NSString *)operation
 {
     [self.programStack addObject:operation];
-    return[[self class] runProgram:self.program];
+    //return[[self class] runProgram:self.program];
 }
 
 //Add Variable to Stack.  Adds compatiblility for variables

@@ -108,12 +108,18 @@
     //Sends data to secondary display.
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:operation];
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
+    
+    [self.brain addOperationToStack:operation];
+}
+
+- (IBAction)equal:(UIButton *)sender
+{
+    double result = 0;
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@"="];
     self.secondaryDisplay.text = [self.secondaryDisplay.text stringByAppendingString:@" "];
-    double result = 0;
-    [self.brain addOperationToStack:operation];
-    self.display.text = [NSString stringWithFormat:@"%g", result];
-    [self.brain pushOperand:[self.display.text doubleValue]];
+    result = [self.brain equalPressed];
+        self.display.text = [NSString stringWithFormat:@"%g", result];
+        [self.brain pushOperand:[self.display.text doubleValue]]; 
 }
 
 

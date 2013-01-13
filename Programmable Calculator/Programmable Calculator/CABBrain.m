@@ -206,6 +206,11 @@ usingVariablesAsValues:(NSDictionary *)variableValues
     //return[[self class] runProgram:self.program];
 }
 
+-(double)equalPressed
+{
+ return [[self class] runProgram:self.programStack];
+}
+
 //Add Variable to Stack.  Adds compatiblility for variables
 -(void)pushVariableToStack:(NSString *)variable
 {

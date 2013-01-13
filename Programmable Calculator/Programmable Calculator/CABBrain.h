@@ -14,6 +14,7 @@
 - (void) pushOperand: (double)operand;
 - (void)addOperationToStack: (NSString *)operation;
 - (void) clear;
+-(double)equalPressed;
 
 @property (nonatomic, readonly) id program;
 

@@ -223,7 +223,7 @@ usingVariablesAsValues:(NSDictionary *)variableValues
     if(topOfStack)
     {
         [stack removeLastObject];
-    }
+    
     
     if ([topOfStack isKindOfClass:[NSNumber class]])
     {
@@ -287,6 +287,7 @@ usingVariablesAsValues:(NSDictionary *)variableValues
         {
             result = -[self popOperandOffOfProgramStack:stack];
         }
+    }
     
         
     }

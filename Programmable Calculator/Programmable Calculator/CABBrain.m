@@ -57,7 +57,19 @@
     {
         stack = [program mutableCopy];
     }
-    return [self popOperandOffOfProgramStack:stack];
+    NSLog(@"%@",program);
+    double result;
+    if ([self variablesUsedInProgram:program])
+    {
+    result = [self popOperandOffOfProgramStack:stack];
+    }
+    else
+    {
+        result = 0;
+    }
+    NSLog(@"%f",result);
+    return result;
+    
 }
 
 //Run Program with Variables selected by user.  Loads Program, replaces
@@ -126,6 +138,7 @@ usingVariablesAsValues:(NSDictionary *)variableValues
     
     NSMutableArray *test = [program mutableCopy];
     id topOfTest = [test lastObject];
+    
     if (topOfTest)
     {
         [test removeLastObject];
@@ -217,13 +230,20 @@ usingVariablesAsValues:(NSDictionary *)variableValues
     [self.programStack addObject:variable];
 }
 
+-(double)testCase:(NSDictionary *)variables
+{
+    //TODO
+    //take in dictionary and run programWithVariables
+    return 0;
+}
+
 //Main method off running programmible calculator
 +(double)popOperandOffOfProgramStack: (NSMutableArray *)stack
 {
     double result = 0;
     id topOfStack = [stack lastObject];
     
-    
+     //Run Program Stack
 
     if(topOfStack)
     {
@@ -292,6 +312,8 @@ usingVariablesAsValues:(NSDictionary *)variableValues
         {
             result = -[self popOperandOffOfProgramStack:stack];
         }
+        
+        
     }
     
         

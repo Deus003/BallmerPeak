@@ -143,7 +143,32 @@
     }
 }
 
+//Add Variable to Program
+- (IBAction)variable:(UIButton *)sender
+{
+    NSString *variable = [sender currentTitle];
+    //Adds variable to display
+    if (userIsInTheMiddleOfEnteringANumber)
+    {
+        self.display.text = [self.display.text stringByAppendingString:variable];
+    }
+    else
+    {
+        //Places first digit in display and replaces 0
+        self.display.text = variable;
+        self.userIsInTheMiddleOfEnteringANumber = YES;
+    }
 
+    [self enterPressed];
+}
+
+//Runs Programs With Variable's Values Sent
+- (IBAction)testCases:(UIButton *)sender
+{
+    //create dictionary based on test case
+    //call testCase from self.brain.
+    //Also create method to handle display...
+}
 
 
 @end

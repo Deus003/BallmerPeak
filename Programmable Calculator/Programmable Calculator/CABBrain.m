@@ -59,7 +59,7 @@
     }
     NSLog(@"%@",program);
     double result;
-    if ([self variablesUsedInProgram:program])
+    if (![self variablesUsedInProgram:program])
     {
     result = [self popOperandOffOfProgramStack:stack];
     }

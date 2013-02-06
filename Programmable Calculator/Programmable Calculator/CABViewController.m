@@ -16,6 +16,7 @@
 @property (nonatomic) BOOL userIsInTheMiddleOfEnteringANumber;
 @property   (nonatomic,strong) CABBrain *brain;
 
+
 @end
 
 @implementation CABViewController
@@ -24,6 +25,7 @@
 @synthesize secondaryDisplay;
 @synthesize userIsInTheMiddleOfEnteringANumber;
 @synthesize brain = _brain;
+
 
 -(CABBrain *) brain
 {
@@ -44,8 +46,7 @@
         
     }
     else
-    {
-        //Places first digit in display and replaces 0
+    {        //Places first digit in display and replaces 0
         self.display.text = digit;
         self.userIsInTheMiddleOfEnteringANumber = YES;
     }
@@ -166,6 +167,18 @@
 - (IBAction)testCases:(UIButton *)sender
 {
     //create dictionary based on test case
+    NSMutableDictionary *testCase;
+    testCase = [[NSMutableDictionary alloc] init];
+    NSString * option = [sender currentTitle];
+    
+    if ([option isEqual:(@"Test1")])
+    {
+        [testCase setValue:[NSNumber numberWithInt:1]
+                    forKey:@"Test1"];
+    }
+    
+    
+    
     //call testCase from self.brain.
     //Also create method to handle display...
 }
